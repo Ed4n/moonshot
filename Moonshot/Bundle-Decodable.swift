@@ -13,6 +13,12 @@ extension Bundle {
     func decode<T: Codable>( _ file: String) -> T {
         
         let decoder = JSONDecoder()
+        let formatter = DateFormatter()
+//        for the date it has to be in yyyy-MM-dd format and with the MM in capital letters, this becuase mm is for minutes and not months.
+        formatter.dateFormat = "y-MM-dd"
+//        dont confuse dateDecodingStrategy with dataDecodingStrategy
+        decoder.dateDecodingStrategy = .formatted(formatter)
+        
         
         guard let url = self.url(forResource: file, withExtension: nil) else {
             fatalError("fail to Locate \(file) in bundle.")
