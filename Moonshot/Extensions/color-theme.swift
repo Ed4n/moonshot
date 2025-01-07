@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-
-//Extend ShpeStyle only where is being used as Color
+// This is how we can add custom colors:
+//Extend ShapeStyle only where is being used as Color
 extension ShapeStyle where Self == Color {
     static var darkBackground: Color {
         Color(red: 0.1, green: 0.1, blue: 0.2)

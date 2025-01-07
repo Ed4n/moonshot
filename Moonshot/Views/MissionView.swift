@@ -39,6 +39,7 @@ struct MissionView: View {
             }
             .padding(.bottom)
             
+//          Astronuats Scroll
             ScrollView(.horizontal, showsIndicators: false){
                 HStack {
                     ForEach(crew, id: \.role) { crewMember in
